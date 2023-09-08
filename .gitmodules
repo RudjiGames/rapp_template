@@ -10,3 +10,15 @@
 [submodule "3rd/enkiTS"]
 	path = 3rd/enkiTS
 	url = https://github.com/dougbinks/enkiTS
+[submodule "build"]
+	path = build
+	url = https://github.com/RudjiGames/build.git
+[submodule "src/libs/rbase"]
+	path = src/libs/rbase
+	url = https://github.com/RudjiGames/rbase.git
+[submodule "src/libs/rprof"]
+	path = src/libs/rprof
+	url = https://github.com/RudjiGames/rprof.git
+[submodule "src/libs/rapp"]
+	path = src/libs/rapp
+	url = https://github.com/RudjiGames/rapp.git
