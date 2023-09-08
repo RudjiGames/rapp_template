@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------//
-/// Copyright (c) 2023 by Milos Tosic. All Rights Reserved.                ///
+/// Copyright 2023 Milos Tosic. All Rights Reserved.                       ///
 //--------------------------------------------------------------------------//
 
 #define RBASE_NAMESPACE aipilot
