@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-BSD--2%20clause-blue.svg)](https://github.com/RudjiGames/rmem/blob/master/LICENSE)
 
-This is a template project showing an example of how to structure files and dependency projects for [**rapp**](https://github.com/RudjiGames/rapp) based applications or games.
+**rapp template** is a project demonstrating an example of how to structure files and dependency projects for applications and games based on [**rapp**](https://github.com/RudjiGames/rapp) and [**build**](https://github.com/RudjiGames/build) system scripts.
 
 Source Code
 ======
@@ -16,6 +16,14 @@ After cloning, make sure to run this command to populate the dependencies:
       git submodule init
       git submodule update
 
+Build
+======
+
+Project files can be manually created using [**GENie**](https://github.com/bkaradzic/GENie).
+
+For an example how to generate project files, or to generate a solution for Visual Studio 2022, please refer to the provided [batch file](https://github.com/RudjiGames/rapp_template/blob/main/scripts/generate_project.bat). The generated solution will be stored at: '*.build\windows\vs2022\app_template\projects\app_template.sln*'
+
+All intermediate files like projects, solutions, obj files, etc. will be stored in '*.biuld*' directory and can always be safely deleted.
 
 License (BSD 2-clause)
 ======
