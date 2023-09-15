@@ -58,7 +58,11 @@ for:
       - git clone --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
      
     install:
+      - dir
       - rapp_template\build\tools\bin\windows\genie.exe --file=rapp_template\src\app_template\genie\genie.lua vs2019    
+      - cd rapp_template
+      - dir
+      - cd ..
       
     build: rapp_template/.build/windows/vs2019/rapp_template/projects/rapp_template.sln
 
