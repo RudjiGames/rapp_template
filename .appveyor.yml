@@ -39,6 +39,10 @@ environment:
     
 shallow_clone: true
 
+install:
+    - git submodule init
+    - git submodule update
+
 for:
   
 # ======================================
@@ -52,14 +56,10 @@ for:
   
     init:
       - git clone --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
-     
-    install:
-      - git submodule init
-      - git submodule update
-      - dir
-      - build\tools\bin\windows\genie.exe --file=src\app_template\genie\genie.lua vs2019
       
-    build: .build/windows/vs2019/rapp_template/projects/rapp_template.sln
+    build_script:
+      - build\tools\bin\windows\genie.exe --file=src\app_template\genie\genie.lua vs2019
+      - .build/windows/vs2019/rapp_template/projects/rapp_template.sln
 
 # ======================================
 # Linux
