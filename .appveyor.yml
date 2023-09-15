@@ -75,10 +75,9 @@ for:
 
     install:
       - ./GENie/bin/linux/genie --file=rapp_template/src/app_template/genie/genie.lua --gcc=linux-gcc-9 gmake
-      - ls -l
   
     build_script:
-      - cd ./.build/linux/gcc-9/app_template/projects/
+      - cd ./rapp_template/.build/linux/gcc-9/app_template/projects/
       - make config=${buildcfg}
 
 # ======================================
@@ -94,8 +93,8 @@ for:
       - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
 
     install:
-      - ./build/tools/bin/darwin/genie --file=rapp_template/src/app_template/genie/genie.lua --gcc=osx gmake
+      - ./rapp_template/build/tools/bin/darwin/genie --file=rapp_template/src/app_template/genie/genie.lua --gcc=osx gmake
     
     build_script:
-      - cd ./.build/osx/clang/app_template/projects/
+      - cd ./rapp_template/.build/osx/clang/app_template/projects/
       - make config=${buildcfg}
