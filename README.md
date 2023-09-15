@@ -1,5 +1,6 @@
 <img src="https://www.rudji.com/images/lib/rapp_template.png"/>
 
+[![Build status](https://ci.appveyor.com/api/projects/status/4eoaojge5re9s4hk?svg=true)](https://ci.appveyor.com/project/milostosic/rapp-template)
 [![License](https://img.shields.io/badge/license-BSD--2%20clause-blue.svg)](https://github.com/RudjiGames/rmem/blob/master/LICENSE)
 
 **rapp template** is a project demonstrating an example of how to structure files and dependency projects for applications and games based on [**rapp**](https://github.com/RudjiGames/rapp) and [**build**](https://github.com/RudjiGames/build) system scripts.
