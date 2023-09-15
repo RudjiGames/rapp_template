@@ -39,10 +39,6 @@ environment:
     
 shallow_clone: true
 
-install:
-    - git submodule init
-    - git submodule update
-
 for:
   
 # ======================================
@@ -55,7 +51,11 @@ for:
       - job_name: Windows
   
     init:
-      - git clone --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
+      - git clone --recursive https://github.com/RudjiGames/rapp_template    rapp_template
+      - cd rapp_template
+      - git submodule init
+      - git submodule update
+      - cd ..
       
     build_script:
       - build\tools\bin\windows\genie.exe --file=src\app_template\genie\genie.lua vs2019
