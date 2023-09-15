@@ -54,8 +54,6 @@ for:
       - git clone --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
      
     install:
-      - dir
-      - cd rapp_tamplate
       - git submodule init
       - git submodule update
       - dir
@@ -76,6 +74,7 @@ for:
       - sudo apt update -y && sudo apt install -y xorg libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libegl1-mesa-dev libx11-dev
       - git clone --depth 1 https://github.com/bkaradzic/GENie  GENie		# build GENie from source: `GLIBC_2.29' not found
       - cd GENie && make && cd ..
+      - git clone --depth 1 https://github.com/glfw/glfw        glfw      
       - mkdir glfwbuild && cd glfwbuild && cmake ../glfw -DGLFW_BUILD_TESTS=OFF && make -j4 && sudo make install && cd ..     
 
     install:
