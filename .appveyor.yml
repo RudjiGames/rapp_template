@@ -1,0 +1,100 @@
+environment:
+  matrix:
+    - job_name: Windows
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      configuration: Debug
+
+    - job_name: Windows
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      configuration: Release
+
+    - job_name: Windows
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      configuration: Retail
+
+    - job_name: Linux
+      APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      buildcfg: debug64
+
+    - job_name: Linux
+      APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      buildcfg: release64
+
+    - job_name: Linux
+      APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      buildcfg: retail64
+
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: debug64
+
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: release64
+
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: retail64
+    
+shallow_clone: true
+
+for:
+  
+# ======================================
+# Windows
+# ======================================
+
+  -
+    matrix:
+      only:
+      - job_name: Windows
+  
+    init:
+      - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
+      
+    build_script:
+      - rapp_template\build\tools\bin\windows\genie.exe --file=rapp_template\src\app_template\genie\genie.lua vs2019
+      - rapp_template\.build\windows\vs2019\app_template\projects\app_template.sln
+
+# ======================================
+# Linux
+# ======================================
+
+  -
+    matrix:
+      only:
+      - job_name: Linux
+
+    init:
+      - sudo apt update -y && sudo apt install -y xorg libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libegl1-mesa-dev libx11-dev
+      - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
+      - git clone --depth 1 https://github.com/bkaradzic/GENie  GENie		# build GENie from source: `GLIBC_2.29' not found
+      - cd GENie && make && cd ..
+      - git clone --depth 1 https://github.com/glfw/glfw        glfw      
+      - mkdir glfwbuild && cd glfwbuild && cmake ../glfw -DGLFW_BUILD_TESTS=OFF && make -j4 && sudo make install && cd ..     
+
+    install:
+      - ./GENie/bin/linux/genie --file=rapp_template/src/app_template/genie/genie.lua --gcc=linux-gcc-9 gmake
+  
+    build_script:
+      - cd ./rapp_template/.build/linux/gcc-9/app_template/projects/
+      - make config=${buildcfg}
+
+# ======================================
+# OSX
+# ======================================
+
+  -
+    matrix:
+      only:
+      - job_name: OSX
+
+    init:
+      - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
+
+    install:
+      - ./rapp_template/build/tools/bin/darwin/genie --file=rapp_template/src/app_template/genie/genie.lua --gcc=osx gmake
+    
+    build_script:
+      - cd ./rapp_template/.build/osx/clang/app_template/projects/
+      - make config=${buildcfg}
