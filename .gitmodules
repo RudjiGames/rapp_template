@@ -7,9 +7,6 @@
 [submodule "3rd/bimg"]
 	path = 3rd/bimg
 	url = https://github.com/bkaradzic/bimg.git
-[submodule "3rd/enkiTS"]
-	path = 3rd/enkiTS
-	url = https://github.com/dougbinks/enkiTS
 [submodule "build"]
 	path = build
 	url = https://github.com/RudjiGames/build.git
