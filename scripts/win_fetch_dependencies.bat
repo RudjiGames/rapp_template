@@ -2,4 +2,8 @@
 cd ..
 git submodule init
 git submodule update
-cd scripts
+
+cd src/libs/rapp
+git submodule init
+git submodule update
+cd ../../../scripts
