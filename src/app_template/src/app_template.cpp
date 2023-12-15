@@ -43,6 +43,8 @@ struct AppTemplate : public rapp::App
 		// Set view 0 clear state.
 		bgfx::setViewClear(0, BGFX_CLEAR_COLOR|BGFX_CLEAR_DEPTH, 0x303030ff, 1.0f, 0);
 
+		rapp::appSetUpdateFrameRate(this, 30);
+
 		return 0;
 	}
 
@@ -52,7 +54,7 @@ struct AppTemplate : public rapp::App
 	{
 	}
 
-	void draw()
+	void draw(float /*_alpha*/)
 	{
 		appRunOnMainThread(mainThreadFunc, this);
 
