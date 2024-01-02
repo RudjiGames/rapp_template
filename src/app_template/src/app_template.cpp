@@ -76,8 +76,6 @@ struct AppTemplate : public rapp::App
 
 		const bgfx::Stats* stats = bgfx::getStats();
 		bgfx::dbgTextPrintf(0, 1, 0x1f, "Resolution: %d x %d", stats->width, stats->height); 
-
-		bgfx::frame();
 	}
 
 	void drawGUI()
