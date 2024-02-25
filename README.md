@@ -21,7 +21,7 @@ Build
 
 Project files can be manually created using [**GENie**](https://github.com/bkaradzic/GENie).
 
-For an example how to generate project files, or to generate a solution for Visual Studio 2022, please refer to the provided [batch file](https://github.com/RudjiGames/rapp_template/blob/main/scripts/generate_project.bat). The generated solution will be stored at: '*.build\windows\vs2022\app_template\projects\app_template.sln*'
+For an example how to generate project files, or to generate a solution for Visual Studio 2022, please refer to the provided [batch file](https://github.com/RudjiGames/rapp_template/blob/master/scripts/win_generate_project.bat). The generated solution will be stored at: '*.build\windows\vs2022\app_template\projects\app_template.sln*'
 
 All intermediate files like projects, solutions, obj files, etc. will be stored in '*.biuld*' directory and can always be safely deleted.
 
