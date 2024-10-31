@@ -1,15 +1,15 @@
 environment:
   matrix:
     - job_name: Windows
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
       configuration: Debug
 
     - job_name: Windows
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
       configuration: Release
 
     - job_name: Windows
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
       configuration: Retail
 
     - job_name: Linux
@@ -52,10 +52,11 @@ for:
     init:
       - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
       
-    build_script:
-      - rapp_template\build\tools\bin\windows\genie.exe --file=rapp_template\src\app_template\genie\genie.lua vs2019
-      - rapp_template\.build\windows\vs2019\app_template\projects\app_template.sln
-
+    install:
+      - rapp_template\build\tools\bin\windows\genie.exe --file=rapp_template\src\app_template\genie\genie.lua vs2022
+      
+    build: rapp_template\.build\windows\vs2022\app_template\projects\app_template.sln
+    
 # ======================================
 # Linux
 # ======================================
