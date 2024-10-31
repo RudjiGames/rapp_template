@@ -12,8 +12,6 @@ struct AppTemplate : public rapp::App
 
 	rapp::WindowHandle	m_window;
 
-	virtual ~AppTemplate() {}
-
 	int init(int32_t _argc, const char* const* _argv, rtmLibInterface* /*_libInterface = 0*/)
 	{
 		rtm::CommandLine cmdLine(_argc, _argv);
