@@ -1,5 +1,17 @@
 environment:
   matrix:
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: debug64
+
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: release64
+
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: retail64
+
     - job_name: Windows
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
       configuration: Debug
@@ -22,18 +34,6 @@ environment:
 
     - job_name: Linux
       APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
-      buildcfg: retail64
-
-    - job_name: OSX
-      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
-      buildcfg: debug64
-
-    - job_name: OSX
-      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
-      buildcfg: release64
-
-    - job_name: OSX
-      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
       buildcfg: retail64
     
 shallow_clone: true
@@ -96,7 +96,7 @@ for:
       - cd GENie && make && cd ..
 
     install:
-      - ./GENie/bin/darwin/genie --file=rapp_template/src/app_template/genie/genie.lua --gcc=osx-x64 gmake
+      - ./GENie/bin/darwin/genie --file=rapp_template/src/app_template/genie/genie.lua --gcc=osx-arm64 gmake
     
     build_script:
       - cd ./rapp_template/.build/osx/clang/app_template/projects/
