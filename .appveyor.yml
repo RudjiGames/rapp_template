@@ -1,17 +1,5 @@
 environment:
   matrix:
-    - job_name: OSX
-      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
-      buildcfg: debug64
-
-    - job_name: OSX
-      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
-      buildcfg: release64
-
-    - job_name: OSX
-      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
-      buildcfg: retail64
-
     - job_name: Windows
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
       configuration: Debug
@@ -35,7 +23,19 @@ environment:
     - job_name: Linux
       APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
       buildcfg: retail64
-    
+      
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: debug64
+
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: release64
+
+    - job_name: OSX
+      APPVEYOR_BUILD_WORKER_IMAGE: macOS-monterey
+      buildcfg: retail64 
+      
 shallow_clone: true
 
 for:
