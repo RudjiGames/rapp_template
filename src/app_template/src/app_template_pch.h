@@ -3,7 +3,7 @@
 /// License: http://www.opensource.org/licenses/BSD-2-Clause               ///
 //--------------------------------------------------------------------------//
 
-#define RBASE_NAMESPACE aipilot
+#define RBASE_NAMESPACE app_template
 #include <rbase/inc/platform.h>
 //#include <rbase/inc/libassert.h>
 
