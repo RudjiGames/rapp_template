@@ -2,7 +2,7 @@
 target="$1"
 
 if [ -z "$target" ]; then
-action="--gcc=osx gmake"
+action="--gcc=osx-x64 gmake"
 fi
 
 if [[ "$target" == "emscripten" ]]; then 
