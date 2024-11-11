@@ -2,7 +2,7 @@
 target="$1"
 
 if [ -z "$target" ]; then
-action="--gcc=osx gmake"
+action="--gcc=osx-x64 gmake"
 fi
 
 if [[ "$target" == "emscripten" ]]; then 
@@ -11,6 +11,10 @@ fi
 
 if [[ "$target" == "cheerp" ]]; then 
 action="--gcc=cheerp gmake"
+fi
+
+if [[ "$target" == "xcode" ]]; then 
+action="xcode15"
 fi
 
 cd ../src/app_template/genie
