@@ -55,7 +55,8 @@ for:
     install:
       - rapp_template\build\tools\bin\windows\genie.exe --file=rapp_template\src\app_template\genie\genie.lua vs2022
       
-    build: rapp_template\.build\windows\vs2022\app_template\projects\app_template.sln
+    build: 
+      project: rapp_template\.build\windows\vs2022\app_template\projects\app_template.sln
     
 # ======================================
 # Linux
