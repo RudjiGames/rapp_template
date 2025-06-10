@@ -56,7 +56,7 @@ for:
       - rapp_template\build\tools\bin\windows\genie.exe --file=rapp_template\src\app_template\genie\genie.lua vs2022
       
     build: 
-      project: .build\windows\vs2022\app_template\projects\app_template.sln
+      project: .build\windows\vs2022\rapp_template\projects\rapp_template.sln
     
 # ======================================
 # Linux
