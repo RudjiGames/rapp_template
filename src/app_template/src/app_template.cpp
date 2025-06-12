@@ -41,7 +41,7 @@ struct AppTemplate : public rapp::App
 		// Set view 0 clear state.
 		bgfx::setViewClear(0, BGFX_CLEAR_COLOR|BGFX_CLEAR_DEPTH, 0x303030ff, 1.0f, 0);
 
-		rapp::appSetUpdateFrameRate(this, 30);
+		//rapp::appSetUpdateFrameRate(this, 30);
 
 		return 0;
 	}
@@ -55,13 +55,6 @@ struct AppTemplate : public rapp::App
 	void draw(float /*_alpha*/)
 	{
 		appRunOnMainThread(mainThreadFunc, this);
-
-		// Set view 0 default viewport.
-		bgfx::setViewRect(0, 0, 0, (uint16_t)m_width, (uint16_t)m_height);
-
-		// This dummy draw call is here to make sure that view 0 is cleared
-		// if no other draw calls are submitted to view 0.
-		bgfx::touch(0);
 
 		// Use debug font to print information about this example.
 		bgfx::dbgTextClear();
