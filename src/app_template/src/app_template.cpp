@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------//
-/// Copyright 2023 Milos Tosic. All Rights Reserved.                       ///
+/// Copyright 2025 Milos Tosic. All Rights Reserved.                       ///
 /// License: http://www.opensource.org/licenses/BSD-2-Clause               ///
 //--------------------------------------------------------------------------//
 
@@ -18,9 +18,9 @@ struct AppTemplate : public rapp::App
 
 		static const rapp::InputBinding bindings[] =
 		{
-			{ 0, "exit",		1, { rapp::KeyboardState::Key::KeyQ,	rapp::KeyboardState::Modifier::LCtrl  }},
-			{ 0, "exit",		1, { rapp::KeyboardState::Key::KeyQ,	rapp::KeyboardState::Modifier::RCtrl  }},
-			{ 0, "hide",		1, { rapp::KeyboardState::Key::Tilde,	rapp::KeyboardState::Modifier::NoMods }},
+			{ 0, "exit", 1, { rapp::KeyboardKey::KeyQ,	rapp::KeyboardModifier::LCtrl  }},
+			{ 0, "exit", 1, { rapp::KeyboardKey::KeyQ,	rapp::KeyboardModifier::RCtrl  }},
+			{ 0, "hide", 1, { rapp::KeyboardKey::Tilde,	rapp::KeyboardModifier::None   }},
 			RAPP_INPUT_BINDING_END
 		};
 
