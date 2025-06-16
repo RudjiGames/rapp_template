@@ -33,15 +33,7 @@ struct AppTemplate : public rapp::App
 		m_width		= width;
 		m_height	= height;
 
-		m_window = rapp::appGraphicsInit(this, m_width, m_height);
-
-		// Enable debug text.
-		bgfx::setDebug(BGFX_DEBUG_TEXT);
-
-		// Set view 0 clear state.
-		bgfx::setViewClear(0, BGFX_CLEAR_COLOR|BGFX_CLEAR_DEPTH, 0x303030ff, 1.0f, 0);
-
-		//rapp::appSetUpdateFrameRate(this, 30);
+		m_window = rapp::appGraphicsInit(this, m_width, m_height, RAPP_WINDOW_FLAG_DPI_AWARE);
 
 		return 0;
 	}
