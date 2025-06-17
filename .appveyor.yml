@@ -50,7 +50,7 @@ for:
       - job_name: Windows
   
     init:
-      - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
+      - git clone --recursive https://github.com/RudjiGames/rapp_template    rapp_template
       
     install:
       - rapp_template\build\tools\bin\windows\genie.exe --file=rapp_template\src\app_template\genie\genie.lua vs2022
@@ -69,7 +69,7 @@ for:
 
     init:
       - sudo apt-get update --allow-releaseinfo-change && sudo apt install -y xorg libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libegl1-mesa-dev libx11-dev
-      - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
+      - git clone --recursive https://github.com/RudjiGames/rapp_template    rapp_template
       - git clone --depth 1 https://github.com/bkaradzic/GENie  GENie		# build GENie from source: `GLIBC_2.29' not found
       - cd GENie && make && cd ..
       - git clone --depth 1 https://github.com/glfw/glfw        glfw      
@@ -92,7 +92,7 @@ for:
       - job_name: OSX
 
     init:
-      - git clone --recursive --depth 1 https://github.com/RudjiGames/rapp_template    rapp_template
+      - git clone --recursive https://github.com/RudjiGames/rapp_template    rapp_template
       - git clone --depth 1 https://github.com/bkaradzic/GENie GENie  # build GENie from source: we don't know the target CPU, can't use ARM binary from 'build'
       - cd GENie && make && cd ..
 
